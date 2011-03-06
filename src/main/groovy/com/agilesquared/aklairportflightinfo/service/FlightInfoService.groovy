@@ -23,6 +23,7 @@ import java.util.logging.Logger
 class FlightInfoService {
 
     private static final Logger log = Logger.getLogger(FlightInfoService.class.getName())
+
     @GET
     @Path("/departures")
     @Produces("application/json")
@@ -30,9 +31,9 @@ class FlightInfoService {
         log.info("departures list is requested...")
         def res = getDeparturePage();
         def responseStr;
-        if(res!=null && res.isSuccess()){
+        if (res != null && res.isSuccess()) {
             responseStr = res.data.str;
-        }else{
+        } else {
             return new FlightInfoList();
         }
 
@@ -92,12 +93,12 @@ class FlightInfoService {
     def getDeparturePage() {
         def http = new HttpURLClient(url: url.toString());
         def wholePage = getWholePage();
-        if(wholePage==null){
-            log.info("Error getting the page at:"+url)
+        if (wholePage == null) {
+            log.info("Error getting the page at:" + url)
         }
         def viewState = getHiddenParameter(wholePage, '__VIEWSTATE')
         def eventValidation = getHiddenParameter(wholePage, '__EVENTVALIDATION')
-        log.info("sucessfully parsed viewstate and eventValidation:"+eventValidation)
+        log.info("sucessfully parsed viewstate and eventValidation:" + eventValidation)
         def postData = [
                 'FlightInfo$FlightInfoScriptManager': 'FlightInfo$FlightInfoScriptManager|FlightInfo$departuresButton',
                 'Header1$txtSearch': 'Search',
@@ -115,31 +116,31 @@ class FlightInfoService {
                 '__ASYNCPOST': 'true'
         ]
         def res;
-        try{
-         res = http.request(
-                method: 'POST',
-                 //have to use ContectType.TEXT otherwise it will use HTML which cause the request method to give back parsed
-                 //data.
-                contentType: ContentType.TEXT,
-                requestContentType: ContentType.URLENC,
-                body: postData,
-
-                headers: ['User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13',
-                        'X-MicrosoftAjax': 'Delta=true',
-                        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                        'Accept-Language':'en-us,en;q=0.5',
-                         'Accept-Encoding':	'gzip,deflate',
-                         'Referer':	'http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx',
-                        'Pragma': 'no-cache',
-                'Accept-Charset':'ISO-8859-1,utf-8;q=0.7,*;q=0.7']
-        )
-        }catch(HttpResponseException he){
-            log.severe("Error posting to aucklandairport website:"+he.localizedMessage);
-        }finally{
-            log.info("Request properties:"+http.properties.toMapString())
-            log.info("Posting to aucklandairport webform got back :"+res==null?"NULL":res.statusLine.statusCode.toString())
-            return res;
+        try {
+            res = http.request(
+                    method: 'POST',
+                    //have to use ContectType.TEXT otherwise it will use HTML which cause the request method to give back parsed
+                    //data.
+                    contentType: ContentType.TEXT,
+                    requestContentType: ContentType.URLENC,
+                    body: postData,
+                    timeout: 9500, //9.5 seconds. right under 10 seconds gae limitation.
+                    headers: ['User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13',
+                            'X-MicrosoftAjax': 'Delta=true',
+                            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+                            'Accept-Language': 'en-us,en;q=0.5',
+                            'Accept-Encoding': 'gzip,deflate',
+                            'Referer': 'http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx',
+                            'Pragma': 'no-cache',
+                            'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7']
+            )
+        } catch (HttpResponseException he) {
+            log.severe("Error posting to aucklandairport website:" + he.localizedMessage);
+            log.info("Error posting to aucklandairport website:" + he.localizedMessage);
         }
+        log.info("Request properties:" + http.properties.toMapString())
+        log.info("Posting to aucklandairport webform got back :" + res == null ? "NULL" : res.statusLine.statusCode.toString())
+        return res;
 
     }
 }
