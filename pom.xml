@@ -27,6 +27,12 @@
             <groupId>org.codehaus.groovy.modules.http-builder</groupId>
             <artifactId>http-builder</artifactId>
             <version>0.5.1</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>groovy</artifactId>
+                    <groupId>org.codehaus.groovy</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>
@@ -52,6 +58,11 @@
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
             <version>1.9.14</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.2</version>
         </dependency>
 
     </dependencies>
@@ -119,11 +130,11 @@
             <url>http://repository.codehaus.org</url>
         </repository>
         <!--<repository>-->
-            <!--<id>Codehaus.Snapshots</id>-->
-            <!--<url>http://snapshots.repository.codehaus.org</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
+        <!--<id>Codehaus.Snapshots</id>-->
+        <!--<url>http://snapshots.repository.codehaus.org</url>-->
+        <!--<snapshots>-->
+        <!--<enabled>true</enabled>-->
+        <!--</snapshots>-->
         <!--</repository>-->
         <repository>
             <id>maven2-repository.dev.java.net</id>

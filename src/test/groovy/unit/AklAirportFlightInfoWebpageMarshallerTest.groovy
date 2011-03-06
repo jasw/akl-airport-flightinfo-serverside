@@ -32,5 +32,9 @@ class AklAirportFlightInfoWebpageMarshallerTest extends GroovyTestCase{
       assertTrue(value.length()>5);
   }
 
-
+  void testGetDeparturePage(){
+      def s = new FlightInfoService();
+      def res = s.getDeparturePage();
+      assertTrue("response failed!",res.isSuccess())
+  }
 }

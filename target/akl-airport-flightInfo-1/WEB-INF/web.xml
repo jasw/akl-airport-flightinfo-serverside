@@ -49,11 +49,12 @@
         <servlet-class>groovyx.gaelyk.GaelykIncomingEmailServlet</servlet-class>
     </servlet>
     -->
-    <!-- Uncomment this servlet filter if you want to enable URL routing -->
+    <!-- Uncomment this servlet filter if you want to enable URL routing
     <filter>
         <filter-name>RoutesFilter</filter-name>
         <filter-class>groovyx.gaelyk.routes.RoutesFilter</filter-class>
     </filter>
+    -->
 
     <servlet-mapping>
         <servlet-name>GroovletServlet</servlet-name>

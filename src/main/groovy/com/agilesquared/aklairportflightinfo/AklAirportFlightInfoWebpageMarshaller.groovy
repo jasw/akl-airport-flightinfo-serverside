@@ -12,8 +12,8 @@ import com.agilesquared.aklairportflightinfo.resources.FlightInfoList
 class AklAirportFlightInfoWebpageMarshaller {
 
 
-  FlightInfoList get(String flightInfoDiv) {
-    def parser = new org.cyberneko.html.parsers.SAXParser()
+  def getFlightInfoList(String flightInfoDiv) {
+    def parser = new org.cyberneko.html.parsers.SAXParser()                      
     parser.setFeature('http://xml.org/sax/features/namespaces', false)
     def parsedDiv = new XmlParser(parser).parseText(flightInfoDiv);
 
@@ -58,7 +58,7 @@ class AklAirportFlightInfoWebpageMarshaller {
         }
         list.add flightInfo
         
-      }
+      }                              
     }
 
     return list;
@@ -74,7 +74,7 @@ class AklAirportFlightInfoWebpageMarshaller {
 
 	"""
 
-    def list = new AklAirportFlightInfoWebpageMarshaller().get(data);
+    def list = new AklAirportFlightInfoWebpageMarshaller().getFlightInfoList(data);
     println list
   }
 
