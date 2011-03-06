@@ -136,7 +136,7 @@ class FlightInfoService {
         }catch(HttpResponseException he){
             log.severe("Error posting to aucklandairport website:"+he.localizedMessage);
         }finally{
-            log.info(http.properties.toMapString())
+            log.info("Request properties:"+http.properties.toMapString())
             log.info("Posting to aucklandairport webform got back :"+res==null?"NULL":res.statusLine.statusCode.toString())
             return res;
         }
