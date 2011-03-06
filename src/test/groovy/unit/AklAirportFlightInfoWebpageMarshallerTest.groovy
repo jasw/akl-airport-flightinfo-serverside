@@ -24,17 +24,6 @@ class AklAirportFlightInfoWebpageMarshallerTest extends GroovyTestCase{
     assertEquals(168,list.getAllFlightInfo().size())
   }
 
-  void testGetHiddenParameter(){
-      def page = FlightInfoService.getWholePage()
-      def value = FlightInfoService.getHiddenParameter(page,'__VIEWSTATE');
-     assertTrue(value.length()>50);
-     value = FlightInfoService.getHiddenParameter(page,'__EVENTVALIDATION');
-      assertTrue(value.length()>5);
-  }
 
-  void testGetDeparturePage(){
-      def s = new FlightInfoService();
-      def res = s.getDeparturePage();
-      assertTrue("response failed!",res.isSuccess())
-  }
+
 }

@@ -3,8 +3,10 @@
   <component name="ChangeListManager">
     <list id="242b9520-a943-403b-a636-a5ac57847c27" name="Default" comment="" />
     <list default="true" id="9fc68c53-1a0c-4888-b19b-3ef4a9f6921f" name="ignore idea files" comment="ignore idea files">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/groovy/unit/FlightInfoServiceTest.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/akl-airport-flightInfo.iws" afterPath="$PROJECT_DIR$/akl-airport-flightInfo.iws" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy" afterPath="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" afterPath="$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" />
     </list>
     <ignored path="akl-airport-flightInfo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,33 +70,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" line="29" class="Class at AklAirportFlightInfoWebpageMarshallerTest.groovy:29" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" line="37" class="Class at AklAirportFlightInfoWebpageMarshallerTest.groovy:37" package="">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy" line="48" class="Class at FlightInfoService.groovy:44" package="">
+      <breakpoint url="file://$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy" line="46" class="Class at FlightInfoService.groovy:47" package="">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -157,24 +133,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="66" selection-start="2280" selection-end="2280" vertical-scroll-proportion="-26.307692">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="appengine-web.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/appengine-web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="32" selection-start="958" selection-end="958" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
@@ -196,16 +154,34 @@
       <file leaf-file-name="AklAirportFlightInfoWebpageMarshallerTest.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="62" selection-start="60252" selection-end="60252" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="60170" selection-end="60170" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FlightInfoService.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="FlightInfoServiceTest.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/groovy/unit/FlightInfoServiceTest.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="0.48920864">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FlightInfoService.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="134" column="28" selection-start="4897" selection-end="4897" vertical-scroll-proportion="3.980198">
+            <state line="31" column="19" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DefaultGroovyMethods.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12478" column="40" selection-start="462426" selection-end="462430" vertical-scroll-proportion="-13.615385">
               <folding />
             </state>
           </provider>
@@ -214,7 +190,7 @@
       <file leaf-file-name="HttpURLClient.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/docs/http-builder-0.5.1/src/main/java/groovyx/net/http/HttpURLClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="33" selection-start="5044" selection-end="5044" vertical-scroll-proportion="0.0">
+            <state line="80" column="13" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -256,7 +232,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/config/JAXBContextResolver.groovy" />
         <option value="$PROJECT_DIR$/src/main/java/com/agilesquared/aklairportflightinfo/config/JAXBContextResolver.java" />
         <option value="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/resources/sample" />
         <option value="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/AklAirportFlightInfoWebpageMarshaller.groovy" />
@@ -268,10 +243,11 @@
         <option value="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/resources/FlightInfo.groovy" />
         <option value="$PROJECT_DIR$/src/test/groovy/funktest/calypsohistory.groovy" />
         <option value="$PROJECT_DIR$/src/test/groovy/unit/testAklAirportFlightInfoWebpageMarshaller.groovy" />
-        <option value="$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/appengine-web.xml" />
         <option value="$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy" />
+        <option value="$PROJECT_DIR$/src/test/groovy/unit/FlightInfoServiceTest.groovy" />
       </list>
     </option>
   </component>
@@ -675,35 +651,7 @@
       <recent name="$PROJECT_DIR$/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AklAirportFlightInfoWebpageMarshallerTest.testGetHiddenParameter">
-    <configuration default="false" name="AklAirportFlightInfoWebpageMarshallerTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="akl-airport-flightInfo" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="AklAirportFlightInfoWebpageMarshallerTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64983" />
-        <option name="TRANSPORT" value="0" />
-        <option name="LOCAL" value="true" />
-      </RunnerSettings>
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Debug" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JUnit.AklAirportFlightInfoWebpageMarshallerTest.testEqual">
     <configuration default="false" name="akl-airport-flightInfo [net.kindleit:maven-gae-plugin:0.7.2:run]" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
       <MavenSettings>
         <option name="myGeneralSettings">
@@ -1103,17 +1051,39 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
+    <configuration default="false" name="AklAirportFlightInfoWebpageMarshallerTest.testEqual" type="JUnit" factoryName="JUnit">
+      <module name="akl-airport-flightInfo" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="AklAirportFlightInfoWebpageMarshallerTest" />
+      <option name="METHOD_NAME" value="testEqual" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
     <list size="10">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.testAklAirportFlightInfoWebpageMarshaller" />
-      <item index="1" class="java.lang.String" itemvalue="Maven.akl-airport-flightInfo [net.kindleit:maven-gae-plugin:0.7.2:run]" />
-      <item index="2" class="java.lang.String" itemvalue="Groovy Script.calypsohistory" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Unnamed" />
-      <item index="4" class="java.lang.String" itemvalue="Groovy Script.twitterTest" />
-      <item index="5" class="java.lang.String" itemvalue="Maven.gae-server-debug" />
-      <item index="6" class="java.lang.String" itemvalue="Remote.gae server remote" />
-      <item index="7" class="java.lang.String" itemvalue="JUnit.testAklAirportFlightInfoWebpageMarshaller.testGrabViewState" />
-      <item index="8" class="java.lang.String" itemvalue="JUnit.testAklAirportFlightInfoWebpageMarshaller.testGetHiddenParameter" />
-      <item index="9" class="java.lang.String" itemvalue="JUnit.AklAirportFlightInfoWebpageMarshallerTest.testGetDeparturePage" />
+      <item index="0" class="java.lang.String" itemvalue="Maven.akl-airport-flightInfo [net.kindleit:maven-gae-plugin:0.7.2:run]" />
+      <item index="1" class="java.lang.String" itemvalue="Groovy Script.calypsohistory" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="3" class="java.lang.String" itemvalue="Groovy Script.twitterTest" />
+      <item index="4" class="java.lang.String" itemvalue="Maven.gae-server-debug" />
+      <item index="5" class="java.lang.String" itemvalue="Remote.gae server remote" />
+      <item index="6" class="java.lang.String" itemvalue="JUnit.testAklAirportFlightInfoWebpageMarshaller.testGrabViewState" />
+      <item index="7" class="java.lang.String" itemvalue="JUnit.testAklAirportFlightInfoWebpageMarshaller.testGetHiddenParameter" />
+      <item index="8" class="java.lang.String" itemvalue="JUnit.AklAirportFlightInfoWebpageMarshallerTest.testGetDeparturePage" />
+      <item index="9" class="java.lang.String" itemvalue="JUnit.AklAirportFlightInfoWebpageMarshallerTest.testEqual" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1166,9 +1136,9 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40053052" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18188354" sideWeight="0.4429708" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21639109" sideWeight="0.64541835" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21639109" sideWeight="0.64541835" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39971244" sideWeight="0.59151196" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15456507" sideWeight="0.64541835" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15456507" sideWeight="0.64541835" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" sideWeight="0.64541835" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35458168" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1216,20 +1186,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/apache/httpcomponents/httpcore/4.0.1/httpcore-4.0.1-sources.jar!/org/apache/http/HttpResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="0" selection-start="1885" selection-end="1885" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/ClassLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="33" selection-start="7642" selection-end="7642" vertical-scroll-proportion="0.33333334">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/lang/Class.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="161" column="34" selection-start="8215" selection-end="8215" vertical-scroll-proportion="0.38274932">
@@ -1311,23 +1267,37 @@
     </entry>
     <entry file="file://$USER_HOME$/docs/http-builder-0.5.1/src/main/java/groovyx/net/http/HttpURLClient.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="33" selection-start="5044" selection-end="5044" vertical-scroll-proportion="0.0">
+        <state line="80" column="13" selection-start="3046" selection-end="3046" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/codehaus/groovy/groovy-all/1.7.5/groovy-all-1.7.5-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12478" column="40" selection-start="462426" selection-end="462430" vertical-scroll-proportion="-13.615385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/groovy/unit/AklAirportFlightInfoWebpageMarshallerTest.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="62" selection-start="60252" selection-end="60252" vertical-scroll-proportion="0.0">
+        <state line="26" column="0" selection-start="60170" selection-end="60170" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/groovy/com/agilesquared/aklairportflightinfo/service/FlightInfoService.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="28" selection-start="4897" selection-end="4897" vertical-scroll-proportion="3.980198">
+        <state line="31" column="19" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/groovy/unit/FlightInfoServiceTest.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="23" selection-start="455" selection-end="455" vertical-scroll-proportion="0.48920864">
           <folding />
         </state>
       </provider>

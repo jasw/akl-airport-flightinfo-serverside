@@ -24,9 +24,6 @@ import groovyx.net.http.HttpResponseDecorator
 class FlightInfoService {
 
     private static final Logger log = Logger.getLogger(FlightInfoService.class.getName())
-    private static HttpURLClient http = new HttpURLClient(url: url.toString())
-    private final static URL url = new URL("http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx")
-    //9.5 seconds. right under 10 seconds gae limitation.
     private static final int TIME_OUT = 9500
 
     @GET
@@ -48,26 +45,25 @@ class FlightInfoService {
 
         def divBeginningTag = 'FlightInfo_FlightInfoUpdatePanel'
         int endOfDivBeginningTag = responseStr.toString().indexOf(divBeginningTag) + divBeginningTag.length();
-        int tableEnd = wholePage.indexOf("</table>", endOfDivBeginningTag);
+        int tableEnd = responseStr.indexOf("</table>", endOfDivBeginningTag);
         String dataLine = responseStr.toString().substring(endOfDivBeginningTag, tableEnd)
 
         return new AklAirportFlightInfoWebpageMarshaller().getFlightInfoList(dataLine)
 
     }
 
-
+    final static URL url = new URL("http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx")
 
 
     @GET
     @Path("/arrivals")
     @Produces("application/json")
     FlightInfoList getArrivals() {
-        def wholePage = getWholePage()
+        def wholePage = url.getText().toString();
         def divBeginningTag = '<div id="FlightInfo_FlightInfoUpdatePanel">'
         int endOfDivBeginningTag = wholePage.indexOf(divBeginningTag) + divBeginningTag.length();
         int tableEnd = wholePage.indexOf("</table>", endOfDivBeginningTag);
         String dataLine = wholePage.substring(endOfDivBeginningTag, tableEnd)
-        System.out << dataLine << "\n"
 
         return new AklAirportFlightInfoWebpageMarshaller().getFlightInfoList(dataLine)
 
@@ -88,25 +84,10 @@ class FlightInfoService {
         value;
     }
 
-    static String getWholePage() {
-        def res = http.request(
-            url:url,
-            method:'GET',
-            contentType: ContentType.TEXT,
-            timeout:TIME_OUT
-            )
-        def builder = new StringBuilder()
-        if(res!=null && res.isSuccess()){
-            res.data.each{line->
-                builder.append(line)
-            }
-        }
-        return builder.toString()
-    }
-
 
     def  HttpResponseDecorator getDeparturePage() {
-        def wholePage = getWholePage();
+        def http = new HttpURLClient(url: url.toString());
+        def wholePage = getWholePageByHttpURLClient();
         if (wholePage == null) {
             log.info("Error getting the page at:" + url)
         }
@@ -132,14 +113,13 @@ class FlightInfoService {
         def res;
         try {
             res = http.request(
-                    url:url,
                     method: 'POST',
                     //have to use ContectType.TEXT otherwise it will use HTML which cause the request method to give back parsed
                     //data.
                     contentType: ContentType.TEXT,
                     requestContentType: ContentType.URLENC,
                     body: postData,
-                    timeout: TIME_OUT,
+                    timeout: TIME_OUT, //9.5 seconds. right under 10 seconds gae limitation.
                     headers: ['User-Agent': 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.13) Gecko/20101203 Firefox/3.6.13',
                             'X-MicrosoftAjax': 'Delta=true',
                             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
@@ -151,10 +131,28 @@ class FlightInfoService {
             )
         } catch (HttpResponseException he) {
             log.severe("Error posting to aucklandairport website:" + he.localizedMessage);
+            log.info("Error posting to aucklandairport website:" + he.localizedMessage);
         }
         log.info("Request properties:" + http.properties.toMapString())
         log.info("Posting to aucklandairport webform got back :" + res == null ? "NULL" : res.statusLine.statusCode.toString())
         return res;
 
+    }
+
+    static String getWholePageByHttpURLClient() {
+        def http = new HttpURLClient()
+        def res = http.request(
+            url:url,
+            method:'GET',
+            contentType: ContentType.TEXT,
+            timeout:TIME_OUT
+            )
+        def builder = new StringBuilder()
+        if(res!=null && res.isSuccess()){
+            res.data.each{line->
+                builder.append(line+'\n')
+            }
+        }
+        return builder.toString()
     }
 }
