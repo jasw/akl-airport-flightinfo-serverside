@@ -97,6 +97,7 @@ class FlightInfoService {
         }
         def viewState = getHiddenParameter(wholePage, '__VIEWSTATE')
         def eventValidation = getHiddenParameter(wholePage, '__EVENTVALIDATION')
+        log.info("sucessfully parsed viewstate and eventValidation:"+eventValidation)
         def postData = [
                 'FlightInfo$FlightInfoScriptManager': 'FlightInfo$FlightInfoScriptManager|FlightInfo$departuresButton',
                 'Header1$txtSearch': 'Search',
@@ -135,7 +136,8 @@ class FlightInfoService {
         }catch(HttpResponseException he){
             log.severe("Error posting to aucklandairport website:"+he.localizedMessage);
         }finally{
-
+            log.info(http.properties.toMapString())
+            log.info("Posting to aucklandairport webform got back :"+res==null?"NULL":res.statusLine.statusCode.toString())
             return res;
         }
 
