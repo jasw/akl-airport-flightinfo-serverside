@@ -24,13 +24,14 @@ import groovyx.net.http.HttpResponseDecorator
 class FlightInfoService {
 
     private static final Logger log = Logger.getLogger(FlightInfoService.class.getName())
-    private static final int TIME_OUT = 9500
+    private static final int TIME_OUT = 20*1000 //20 seconds
+
+    final static URL url = new URL("http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx")
 
     @GET
     @Path("/departures")
     @Produces("application/json")
     FlightInfoList getDepartures() {
-        log.info("departures list is requested...")
         def res = getDeparturePage();
         def responseStr = new StringBuilder();
         if (res != null && res.isSuccess()) {
@@ -51,8 +52,6 @@ class FlightInfoService {
         return new AklAirportFlightInfoWebpageMarshaller().getFlightInfoList(dataLine)
 
     }
-
-    final static URL url = new URL("http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx")
 
 
     @GET
@@ -93,7 +92,6 @@ class FlightInfoService {
         }
         def viewState = getHiddenParameter(wholePage, '__VIEWSTATE')
         def eventValidation = getHiddenParameter(wholePage, '__EVENTVALIDATION')
-        log.info("sucessfully parsed viewstate and eventValidation:" + eventValidation)
         def postData = [
                 'FlightInfo$FlightInfoScriptManager': 'FlightInfo$FlightInfoScriptManager|FlightInfo$departuresButton',
                 'Header1$txtSearch': 'Search',
@@ -133,7 +131,6 @@ class FlightInfoService {
             log.severe("Error posting to aucklandairport website:" + he.localizedMessage);
             log.info("Error posting to aucklandairport website:" + he.localizedMessage);
         }
-        log.info("Request properties:" + http.properties.toMapString())
         log.info("Posting to aucklandairport webform got back :" + res == null ? "NULL" : res.statusLine.statusCode.toString())
         return res;
 
