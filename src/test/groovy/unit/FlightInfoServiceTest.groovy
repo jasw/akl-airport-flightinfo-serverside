@@ -13,12 +13,14 @@ class FlightInfoServiceTest extends GroovyTestCase{
         def s = new FlightInfoService();
         def flights = s.getDepartures();
         assertTrue("could not retrieve any departure flights back ",flights.allFlightInfo.size()>0)
+        println flights
     }
 
     void testGetArrivals(){
         def s = new FlightInfoService();
         def flights = s.getArrivals()
         assertTrue("cound not retrive any arrival flights back ",flights.allFlightInfo.size()>0)
+        println flights;
     }
 
 }

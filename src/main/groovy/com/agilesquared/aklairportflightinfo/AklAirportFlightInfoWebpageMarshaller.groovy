@@ -12,7 +12,7 @@ import com.agilesquared.aklairportflightinfo.resources.FlightInfoList
 class AklAirportFlightInfoWebpageMarshaller {
 
 
-  def getFlightInfoList(String flightInfoDiv) {
+  def getFlightInfoList(def flightInfoDiv) {
     def parser = new org.cyberneko.html.parsers.SAXParser()                      
     parser.setFeature('http://xml.org/sax/features/namespaces', false)
     def parsedDiv = new XmlParser(parser).parseText(flightInfoDiv);
@@ -41,7 +41,7 @@ class AklAirportFlightInfoWebpageMarshaller {
         tr.TD.each {td ->
 
           def var = td.value()[0]
-          String value = var.toString();
+          def value = var.toString();
           //when class attribute is airline, the value object var could be either
           //a string or a img
           if ('airline'.equals(td.attribute("class"))) {

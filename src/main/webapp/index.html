@@ -1,12 +1,41 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <h1><center>Auckland Airport FlightInfo webservice</center></h1>
+</head>
 <body>
 
-<h1>Auckland Airport FlightInfo webservice</h1>
 
-<p>International Flights</p>
-<a href="rest/v1.0/flightinfo/departures">Departures</a>
-<a href="rest/v1.0/flightinfo/arrivals">Arrivals</a>
+<h2><center>International Flights</center></h2>
+<p>
+    This website currently provides two webservice calls. Each takes a http get and returns a list of
+    flight info in JSON format.
 
+</p>
+<p>
+    <h2>How it works</h2>
+    Upon request, the webservice will scrape a live updated
+<a href="http://www.aucklandairport.co.nz/FlightInformation/InternationalArrivalsAndDepartures.aspx"> webpage</a>
+and return the flight info in json format.
+The arrival list is easier to get than the departure list. A simple http get will do the trick.
+However, the departure list on the other hand requires a http get and http post
+(bloody .net __viewstate crap) and another get to grab the page I want.
+With this webservice, it is possible to create client apps (like a phone app) that do not rely on
+Auckland Airport's webpage. So when they change their webpage, instead of publishing a new app to accommodate their changes, you can rely on this webservice to change the internal implementation. So the actual websites
+change will have no effect at all to your phone apps.
+</p>
+<p>
+    <h2>Problems</h2>
+This site is deployed on Google App Engine. It is VERY slow in fetching some remote webpages. Sometimes, it just
+times out. Future work is create a queue of webpage scrapping workers to do the fetching. So the webservice can
+simple return the latest cached results and never gives you 500 error hopefully.
+By returning cached results, it will be also good for DDOS attacks and avoiding big bills from google.
+</p>
+<p>
+    <h2> Services</h2>
+<a class="webservice" href="rest/v1.0/flightinfo/departures">Departures</a>
+<a class="webservice" href="rest/v1.0/flightinfo/arrivals">Arrivals</a>
+</p>
 </body>
 </html>

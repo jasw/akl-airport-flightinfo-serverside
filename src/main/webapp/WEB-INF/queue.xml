@@ -1,0 +1,29 @@
+<queue-entries>
+    <queue>
+        <name>flight-info-fetcher</name>
+        <rate>60/h</rate>
+        <retry-parameters>
+            <task-retry-limit>1</task-retry-limit>
+        </retry-parameters>
+        <bucket-size>40</bucket-size>
+        <max-concurrent-requests>2</max-concurrent-requests>
+    </queue>
+    <queue>
+        <name>fetcher-manager</name>
+        <rate>24/d</rate>
+        <retry-parameters>
+            <task-retry-limit>1</task-retry-limit>
+        </retry-parameters>
+        <bucket-size>40</bucket-size>
+        <max-concurrent-requests>2</max-concurrent-requests>
+    </queue>
+    <queue>
+        <name>manager's manager</name>
+        <rate>7/w</rate>
+        <retry-parameters>
+            <task-retry-limit>1</task-retry-limit>
+        </retry-parameters>
+        <bucket-size>40</bucket-size>
+        <max-concurrent-requests>2</max-concurrent-requests>
+    </queue>
+</queue-entries>

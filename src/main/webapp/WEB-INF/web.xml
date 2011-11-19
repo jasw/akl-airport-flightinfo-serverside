@@ -1,11 +1,14 @@
 <web-app xmlns="http://java.sun.com/xml/ns/javaee" version="2.5">
+    <listener>
+        <listener-class>groovyx.gaelyk.GaelykServletContextListener</listener-class>
+    </listener>
     <servlet>
         <servlet-name>GroovletServlet</servlet-name>
         <servlet-class>groovyx.gaelyk.GaelykServlet</servlet-class>
         <init-param>
             <param-name>verbose</param-name>
             <!-- Set it to true for more details -->
-            <param-value>false</param-value>
+            <param-value>true</param-value>
         </init-param>
     </servlet>
     <servlet>
@@ -30,6 +33,7 @@
             <param-value>com.agilesquared.aklairportflightinfo</param-value>
         </init-param>
     </servlet>
+
 
     <servlet-mapping>
         <servlet-name>JerseyWebApplication</servlet-name>
@@ -64,6 +68,7 @@
         <servlet-name>TemplateServlet</servlet-name>
         <url-pattern>*.gtpl</url-pattern>
     </servlet-mapping>
+
     <!-- Uncomment the following servlet mapping if you want to receive XMPP messages-->
     <!--
     <servlet-mapping>
@@ -98,7 +103,7 @@
     </security-constraint>
     -->
 
-    <!--<welcome-file-list>
-        <welcome-file>index.gtpl</welcome-file>
-    </welcome-file-list>-->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>
 </web-app>
