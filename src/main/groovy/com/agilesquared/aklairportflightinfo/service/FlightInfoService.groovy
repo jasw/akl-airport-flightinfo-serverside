@@ -68,6 +68,17 @@ class FlightInfoService {
 
     }
 
+    @GET
+    @Path
+    @Produces("application/json")
+    FlightInfoList getDepartures(int range){
+        def departures = getDepartures();
+        def sublist = departures.getAllFlightInfo().resizeListWithRangeAndGetSublist(range)
+        def list = new FlightInfoList()
+
+
+    }
+
     static String getHiddenParameter(def wholePage, def pName) {
 
         def value;
