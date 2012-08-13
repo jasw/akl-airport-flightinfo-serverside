@@ -10,19 +10,25 @@
     <description>Gaelyk Template Project</description>
 
     <properties>
-        <gaelyk.version>[0.6.1]</gaelyk.version>
-        <gae.version>[1.4.2]</gae.version>
+        <gaelyk.version>[1.2]</gaelyk.version>
+        <gae.version>[1.6.6]</gae.version>
         <jersey.version>[1.6]</jersey.version>
         <gmaven.version>1.3</gmaven.version>
         <gaeplugin.version>0.8.2</gaeplugin.version>
+        <maven.compiler.version>2.0</maven.compiler.version>
 
         <sonar.language>grvy</sonar.language>
         <sonar.dynamicAnalysis>false</sonar.dynamicAnalysis>
+        <http-builder.version>0.5.2</http-builder.version>
+        <grizzly-servlet-webserver.version>1.9.18-i</grizzly-servlet-webserver.version>
+        <nekohtml.version>1.9.14</nekohtml.version>
+        <junit.version>4.8.2</junit.version>
+        <groovy.version>1.8.6</groovy.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>groovyx.gaelyk</groupId>
+            <groupId>org.gaelyk</groupId>
             <artifactId>gaelyk</artifactId>
             <version>${gaelyk.version}</version>
             <exclusions>
@@ -37,9 +43,15 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.codehaus.groovy.modules.http-builder</groupId>
             <artifactId>http-builder</artifactId>
-            <version>0.5.1</version>
+            <version>${http-builder.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>groovy</artifactId>
@@ -65,17 +77,18 @@
         <dependency>
             <groupId>com.sun.grizzly</groupId>
             <artifactId>grizzly-servlet-webserver</artifactId>
-            <version>1.9.18-i</version>
+            <version>${grizzly-servlet-webserver.version}</version>
         </dependency>
         <dependency>
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
-            <version>1.9.14</version>
+            <version>${nekohtml.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.8.2</version>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
@@ -96,13 +109,23 @@
                 <groupId>net.kindleit</groupId>
                 <artifactId>maven-gae-plugin</artifactId>
                 <version>${gaeplugin.version}</version>
-
+                <configuration>
+                    <sdkDir>/Users/jasonw/tools/appengine-java-sdk-1.7.0</sdkDir>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.kindleit</groupId>
+                        <artifactId>gae-runtime</artifactId>
+                        <version>${gae.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
             </plugin>
             <!-- Java compiler version -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>2.0</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>

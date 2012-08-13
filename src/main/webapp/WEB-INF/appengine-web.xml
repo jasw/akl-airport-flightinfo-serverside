@@ -31,4 +31,6 @@
         <exclude path="/WEB-INF/**.groovy" />
         <exclude path="**.gtpl" />
     </static-files>
+    <threadsafe>true</threadsafe>
+
 </appengine-web-app>

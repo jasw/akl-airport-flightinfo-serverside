@@ -1,3 +1,5 @@
+package funktest
+
 import com.agilesquared.aklairportflightinfo.service.FlightInfoService
 /**
  * Created by IntelliJ IDEA.
@@ -7,20 +9,29 @@ import com.agilesquared.aklairportflightinfo.service.FlightInfoService
  */
 class FlightInfoServiceTest extends GroovyTestCase{
 
-
+    def s = new FlightInfoService()
 
     void testGetDepartures(){
-        def s = new FlightInfoService();
         def flights = s.getDepartures();
         assertTrue("could not retrieve any departure flights back ",flights.allFlightInfo.size()>0)
         println flights
     }
 
     void testGetArrivals(){
-        def s = new FlightInfoService();
         def flights = s.getArrivals()
         assertTrue("cound not retrive any arrival flights back ",flights.allFlightInfo.size()>0)
         println flights;
     }
 
+    void testGetDeparturesWithRange(){
+        def flights = s.getDepartures(100,100000)
+        flights = s.getDepartures(-100,100000)
+        assertTrue(flights.allFlightInfo.size() == 0)
+    }
+
+    void testGetArrivalsWithRange(){
+        def
+        flights = s.getArrivals(0,1)
+        assertTrue(flights.allFlightInfo.size()==1)
+    }
 }

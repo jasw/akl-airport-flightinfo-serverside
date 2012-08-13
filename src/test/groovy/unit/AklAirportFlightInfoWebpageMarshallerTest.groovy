@@ -20,7 +20,7 @@ class AklAirportFlightInfoWebpageMarshallerTest extends GroovyTestCase{
            </tbody></table>
 
        """
-    def list = aklAirportFlightInfoWebpageMarshaller.getFlightInfoList(data)
+    def list = aklAirportFlightInfoWebpageMarshaller.toFlightInfoList(data)
     println list
     assertEquals("should generate 168 flightinfo instances",168,list.getAllFlightInfo().size())
   }
